@@ -5,13 +5,13 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Surface
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.painter.Painter
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
@@ -29,7 +29,7 @@ class MainActivity : ComponentActivity() {
                 Surface(
                     color = MaterialTheme.colors.background
                 ) {
-                    ComposeArticle()
+                    ComposeArticleApp()
                 }
             }
         }
@@ -37,39 +37,37 @@ class MainActivity : ComponentActivity() {
 }
 
 @Composable
-fun ComposeArticle() {
-    Column {
-        ImageHeader()
-        ArticleText()
-    }
-}
-
-@Composable
-fun ImageHeader() {
-    Image(
-        painter = painterResource(id = R.drawable.bg_compose_background),
-        contentDescription = null,
-        modifier = Modifier.fillMaxWidth()
+fun ComposeArticleApp() {
+    ArticleCard(
+        title = stringResource(id = R.string.title_jetpack_compose_tutorial),
+        shortDescription = stringResource(id = R.string.paragraph_1),
+        longDescription = stringResource(id = R.string.paragraph_2),
+        imagePainter = painterResource(id = R.drawable.bg_compose_background)
     )
 }
 
 @Composable
-fun ArticleText() {
-    Column {
+fun ArticleCard(
+    title: String,
+    shortDescription: String,
+    longDescription: String,
+    imagePainter: Painter,
+    modifier: Modifier = Modifier,
+) {
+    Column(modifier = modifier) {
+        Image(painter = imagePainter, contentDescription = null)
         Text(
-            text = stringResource(id = R.string.title),
+            text = title,
             fontSize = 24.sp,
             modifier = Modifier.padding(16.dp)
         )
-
         Text(
-            text = stringResource(id = R.string.paragraph_1),
+            text = shortDescription,
             textAlign = TextAlign.Justify,
             modifier = Modifier.padding(start = 16.dp, end = 16.dp)
         )
-
         Text(
-            text = stringResource(id = R.string.paragraph_2),
+            text = longDescription,
             textAlign = TextAlign.Justify,
             modifier = Modifier.padding(16.dp)
         )
@@ -78,8 +76,8 @@ fun ArticleText() {
 
 @Preview(showBackground = true)
 @Composable
-fun DefaultPreview() {
+fun ComposeArticleAppPreview() {
     LearnTogetherTheme {
-        ComposeArticle()
+        ComposeArticleApp()
     }
 }
