@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">Art Space</string>
+    <string name="vase_of_flowers">Vase of Flowers</string>
+    <string name="jan_davidsz_de_heem">Jan Davidsz de Heem (1670)</string>
+    <string name="the_cannon_shot">The Cannon Shot</string>
+    <string name="rijksmuseum">Rijksmuseum (1680)</string>
+    <string name="the_river_severn">The River Severn at Shrewsbury, Shropshire</string>
+    <string name="paul_sandby">Paul Sandby (1770)</string>
+    <string name="water_color_paintings">Water Color Paintings</string>
+    <string name="vera_Gorbunova">Vera Gorbunova (2021)</string>
+    <string name="naples_from_sir_william_villa">Naples From Sir William\'s villa</string>
+    <string name="john_warwick_smith">John Warwick Smith (1780 – 1782)</string>
+    <string name="previous">Previous</string>
+    <string name="next">Next</string>
+</resources>
